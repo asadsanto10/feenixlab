@@ -1,0 +1,20 @@
+/*--------------------------------------------------------------
+# Image Popup Styles: Khairul Islam [October 02, 2018]
+--------------------------------------------------------------*/
+
+.img-pop-up {
+    width: 300px;
+    height: 425px;
+}
+
+.img-pop-up-large {
+    width: 100%
+}
+
+.dl-img-container {
+    margin-top: 25px;
+}
+
+.dl-img-card {
+    margin-top: 25px;
+}

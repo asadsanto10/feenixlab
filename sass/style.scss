@@ -830,7 +830,6 @@ main {
 /*our work area start*/
 #our_work {
   padding-top: 100px;
-
   h2 {
     padding-top: 45px;
     color: #464646;
@@ -942,6 +941,8 @@ main {
 
     .padding-top {
       padding-top: 25px;
+      float: left;
+      clear: both;
     }
   }
 }

@@ -122,6 +122,7 @@
         border-radius: 0;
         border-top-left-radius: 25px;
         border-bottom-left-radius: 25px;
+        width: 100% !important;
     }
 
     .hori-selector .left,

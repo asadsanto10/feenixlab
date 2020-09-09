@@ -1,4 +1,4 @@
-// nav menu scrool and active
+// // nav menu scrool and active
 
 let mainNavLinks = document.querySelectorAll("nav ul li a");
 let mainSections = document.querySelectorAll("main section");
@@ -56,16 +56,26 @@ $(document).ready(function () {
     setTimeout(function () { test(); });
 });
 $(window).scroll('resize', function () {
-    setTimeout(function () { test(); }, 500);
+    setTimeout(function () { test(); }, 600);
 });
 $(".navbar-toggler").click(function () {
     setTimeout(function () { test(); });
 });
 
 
+
 jQuery(document).ready(function ($) {
     // Initiate the wowjs animation library
     new WOW().init();
+
+    // smooth scrool
+    $("a[href^='#']").on('click', function (e) {
+        e.preventDefault();
+        var hash = this.hash;
+        $('html, body').animate({
+            scrollTop: $(this.hash).offset().top
+        }, 600);
+    });
 });
 
 $(document).ready(function () {
@@ -101,7 +111,7 @@ $(document).ready(function () {
 
 
     /*=============silk slider=====================*/
-    $('#concerns .concernsss').slick({
+    $('#silck_clint').slick({
         infinite: true,
         autoplay: true,
         autoplaySpeed: 3000,
@@ -133,9 +143,6 @@ $(document).ready(function () {
                     slidesToScroll: 1
                 }
             }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
         ]
     });
     /*=============silk slider=====================*/

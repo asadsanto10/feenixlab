@@ -830,6 +830,7 @@ main {
 /*our work area start*/
 #our_work {
   padding-top: 100px;
+
   h2 {
     padding-top: 45px;
     color: #464646;
@@ -893,8 +894,6 @@ main {
       -o-transition: all ease 0.5s;
       transition: all ease 0.5s;
       overflow: hidden;
-      float: left;
-      clear: both;
 
       img {
         -webkit-transition: all ease 0.5s;
@@ -943,8 +942,6 @@ main {
 
     .padding-top {
       padding-top: 25px;
-      float: left;
-      clear: both;
     }
   }
 }

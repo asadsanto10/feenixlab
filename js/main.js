@@ -147,20 +147,31 @@ $(document).ready(function () {
     /*=============silk slider=====================*/
 
 
+
     /*=================isotop==================*/
-    var $grid = $('.work_image').isotope({});
+
+    $(window).on('load', function () {
+        $grid.isotope('layout');
+
+    });
+    //install
+    var $grid = $('.work_image').isotope({
+
+    });
+    //grid
+    $grid.imagesLoaded().progress(function () {
+        $grid.isotope('layout');
+    });
     // filter items on button click
     $('.filter-button').on('click', 'ul li', function () {
         var filterValue = $(this).attr('data-filter');
-        $grid.isotope({
-            filter: filterValue
-        });
+        $grid.isotope({ filter: filterValue });
     });
     $('#our_work ul li').click(function () {
         $('li').removeClass("active");
         $(this).addClass('active');
     });
-    /*=================isotop==================*/
+ /*=================isotop==================*/
 
 
 });

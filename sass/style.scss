@@ -893,6 +893,8 @@ main {
       -o-transition: all ease 0.5s;
       transition: all ease 0.5s;
       overflow: hidden;
+      float: left;
+      clear: both;
 
       img {
         -webkit-transition: all ease 0.5s;

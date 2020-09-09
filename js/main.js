@@ -1,9 +1,4 @@
 // // nav menu scrool and active
-
-$(document).ready(function () {
-    $(window).load(function () { $('.work_image').isotope('reLayout'); });
-});
-
 let mainNavLinks = document.querySelectorAll("nav ul li a");
 let mainSections = document.querySelectorAll("main section");
 

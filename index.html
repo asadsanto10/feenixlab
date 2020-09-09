@@ -671,7 +671,9 @@
 	</script>
 	<script type='text/javascript'>
 		$(window).load(function () {
-			$.getScript('js\isotope-docs.min.js', function () {});
+			$.getScript('js\isotope-docs.min.js', function () {
+				$('.work_image').isotope('reLayout');
+			});
 		});
 	</script>
 </body>

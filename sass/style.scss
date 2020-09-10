@@ -985,6 +985,12 @@ main {
 /******client **************/
 
 /******Team area******/
+.slick-initialized .slick-slide {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
 #team {
   background: url(../img/testimonials.jpg) no-repeat;
   background-position: center;
@@ -1082,8 +1088,8 @@ main {
     margin-bottom: 20px;
     border-radius: 50%;
     height: 115px;
-    -webkit-shape-outside:circle();
-    shape-outside:circle();
+    -webkit-shape-outside: circle();
+    shape-outside: circle();
   }
 
   .content p {

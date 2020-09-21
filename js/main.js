@@ -20,7 +20,6 @@ window.addEventListener("scroll", event => {
     });
 });
 
-
 // ---------Responsive-navbar-active-animation-----------
 function test() {
     var tabsNewAnim = $('#navbarSupportedContent');
@@ -60,8 +59,6 @@ $(window).scroll('resize', function () {
 $(".navbar-toggler").click(function () {
     setTimeout(function () { test(); });
 });
-
-
 
 jQuery(document).ready(function ($) {
     // Initiate the wowjs animation library
@@ -107,8 +104,6 @@ $(document).ready(function () {
         }
     });
     /*who area parallax*/
-
-
     /*=============silk slider=====================*/
     $('#silck_clint').slick({
         infinite: true,
@@ -146,8 +141,6 @@ $(document).ready(function () {
     });
     /*=============silk slider=====================*/
 
-
-
     /*=================isotop==================*/
 
     $(window).on('load', function () {
@@ -173,6 +166,80 @@ $(document).ready(function () {
     });
  /*=================isotop==================*/
 
+
+//  contact form validate =============================
+$('#contact_form').validate({
+        onfocusout: false,
+        onkeyup: false,
+        rules: {
+            name: "required",
+            message: "required",
+            email: {
+                required: true,
+                email: true
+            },
+
+        },
+        errorPlacement: function(error, element) {
+            error.insertAfter(element);
+        },
+        messages: {
+            name: "Please type your name",
+            message: "Please type your message",
+            email: {
+                required: "Please type your email",
+                email: "Please, enter a valid email"
+            }
+        },
+					
+        highlight: function(element) {
+            $(element)
+            .text('').addClass('error')
+        },                    
+					
+        success: function(element) {
+            element
+            .text('').addClass('valid')
+        }
+    });
+
+
+     $('#contact_form').submit(function() {
+        // submit the form
+        if($(this).valid()){
+            $('#submit').button('loading'); 
+            var action = $(this).attr('action');
+            $.ajax({
+                url: action,
+                type: 'POST',
+                data: {
+                    contactname: $('#contact_name').val(),
+                    contactemail: $('#contact_email').val(),
+                    contactephone: $('#contact_phone').val(),
+                    contactmessage: $('#contact_message').val()
+                },
+                success: function() {
+                    $('#submit').button('reset');
+					$('#modalContact').modal('hide');
+					
+					//Use modal popups to display messages
+					$('#modalMessage .modal-title').html('<i class="far fa-check-circle"></i>Well done!<br>Your message has been successfully sent!');
+					$('#modalMessage').modal('show');
+                },
+                error: function() {
+                    $('#submit').button('reset');
+					$('#modalContact').modal('hide');
+					
+					//Use modal popups to display messages
+					$('#modalMessage .modal-title').html('<i class="fas fa-exclamation-triangle"></i>Oops!<br>Something went wrong!');
+					$('#modalMessage').modal('show');
+                }
+            });
+        } else {
+            $('#submit').button('reset')
+        }
+        return false; 
+    });	    	  
 
 });
 

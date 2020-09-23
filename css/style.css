@@ -1,5 +1,136 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+.loader {
+  width: 80px;
+  height: 70px;
+  margin: 50px auto 0;
+  position: relative;
+  z-index: 73;
+}
+
+.loader .square {
+  background: #ee5253;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 3px;
+  -webkit-animation: motion 2s infinite cubic-bezier(0.89, 0.03, 0.06, 1.5);
+          animation: motion 2s infinite cubic-bezier(0.89, 0.03, 0.06, 1.5);
+}
+
+.loader .path {
+  height: 10px;
+  width: 80px;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.loader .path > div {
+  background: #222;
+  width: 10px;
+  height: 10px;
+  margin: 0 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: dynamic 4s infinite cubic-bezier(0.89, 0.03, 0.06, 1.5);
+          animation: dynamic 4s infinite cubic-bezier(0.89, 0.03, 0.06, 1.5);
+}
+
+.loader .path > div:nth-child(1) {
+  left: 0px;
+}
+
+.loader .path > div:nth-child(2) {
+  left: 40px;
+}
+
+.loader .path > div:nth-child(3) {
+  left: 80px;
+}
+
+.loader .path > div:nth-child(4) {
+  left: 120px;
+}
+
+.loader .path > div:nth-child(5) {
+  left: 160px;
+}
+
+.loader .path > div:nth-child(6) {
+  left: 200px;
+}
+
+@-webkit-keyframes motion {
+  50% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
+@keyframes motion {
+  50% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
+@-webkit-keyframes dynamic {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  25% {
+    -webkit-transform: translateX(-40px);
+            transform: translateX(-40px);
+  }
+  50% {
+    -webkit-transform: translateX(-80px);
+            transform: translateX(-80px);
+  }
+  75% {
+    -webkit-transform: translateX(-120px);
+            transform: translateX(-120px);
+  }
+  100% {
+    -webkit-transform: translateX(-160px);
+            transform: translateX(-160px);
+  }
+}
+
+@keyframes dynamic {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  25% {
+    -webkit-transform: translateX(-40px);
+            transform: translateX(-40px);
+  }
+  50% {
+    -webkit-transform: translateX(-80px);
+            transform: translateX(-80px);
+  }
+  75% {
+    -webkit-transform: translateX(-120px);
+            transform: translateX(-120px);
+  }
+  100% {
+    -webkit-transform: translateX(-160px);
+            transform: translateX(-160px);
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

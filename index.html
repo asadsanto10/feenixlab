@@ -26,20 +26,6 @@
 </head>
 
 <body>
-	<!-- preloader -->
-	<div class="loader">
-		<div class="square"></div>
-		<div class="path">
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-		</div>
-	</div>
-	<!-- preloader -->
-
 	<!--  -->
 	<header id="header">
 		<div class="container-fluid p-0" style="background: #252830">
@@ -766,6 +752,20 @@
 		</div>
 	</div>
 	<!-- MODALS END-->
+	
+	<div id="pre-loader">
+		<div class="loader">
+			<div class="square"></div>
+			<div class="path">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+	</div>
 	</main>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -781,19 +781,9 @@
 	<script src="lib/wow/wow.min.js"></script>
 	<script src="js/main.js"></script>
 	<script type='text/javascript'>
-		$(window).load(function () {
-			$.getScript('js\isotope-docs.min.js', function () {
-				$('.work_image').isotope('reLayout');
-			});
+		$(window).on('load', function () {
+			$("#pre-loader").delay(600).fadeOut();
 		});
-
-		$(window).load(function() {
-			$('.loader').fadeOut('slow');
-		});
-		window.onload = function(){
-        //hide the preloader
-        document.querySelector(".loader").style.display = "none";
-    }
 	</script>
 </body>
 

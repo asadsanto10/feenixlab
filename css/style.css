@@ -1,24 +1,34 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
-.loader {
-  width: 80px;
-  height: 70px;
-  margin: 50px auto 0;
-  position: relative;
-  z-index: 73;
+#pre-loader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #252830;
+  z-index: 99999;
 }
 
-.loader .square {
-  background: #ee5253;
+#pre-loader .loader {
+  width: 80px;
+  height: 70px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#pre-loader .loader .square {
+  background-image: url("../img/favicon.png");
   width: 50px;
   height: 50px;
   margin: 0 auto;
   border-radius: 3px;
-  -webkit-animation: motion 2s infinite cubic-bezier(0.89, 0.03, 0.06, 1.5);
-          animation: motion 2s infinite cubic-bezier(0.89, 0.03, 0.06, 1.5);
+  -webkit-animation: motion 2s infinite;
+          animation: motion 2s infinite;
 }
 
-.loader .path {
+#pre-loader .loader .path {
   height: 10px;
   width: 80px;
   overflow: hidden;
@@ -27,8 +37,8 @@
   left: 0;
 }
 
-.loader .path > div {
-  background: #222;
+#pre-loader .loader .path > div {
+  background: #fff;
   width: 10px;
   height: 10px;
   margin: 0 15px;
@@ -39,49 +49,49 @@
           animation: dynamic 4s infinite cubic-bezier(0.89, 0.03, 0.06, 1.5);
 }
 
-.loader .path > div:nth-child(1) {
+#pre-loader .loader .path > div:nth-child(1) {
   left: 0px;
 }
 
-.loader .path > div:nth-child(2) {
+#pre-loader .loader .path > div:nth-child(2) {
   left: 40px;
 }
 
-.loader .path > div:nth-child(3) {
+#pre-loader .loader .path > div:nth-child(3) {
   left: 80px;
 }
 
-.loader .path > div:nth-child(4) {
+#pre-loader .loader .path > div:nth-child(4) {
   left: 120px;
 }
 
-.loader .path > div:nth-child(5) {
+#pre-loader .loader .path > div:nth-child(5) {
   left: 160px;
 }
 
-.loader .path > div:nth-child(6) {
+#pre-loader .loader .path > div:nth-child(6) {
   left: 200px;
 }
 
 @-webkit-keyframes motion {
   50% {
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
 @keyframes motion {
   50% {
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 

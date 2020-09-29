@@ -655,7 +655,8 @@ main {
         font-size: 18px;
         padding-top: 15px;
         font-weight: 500;
-        text-transform: capitalize;;
+        text-transform: capitalize;
+        ;
       }
 
       img {
@@ -746,6 +747,60 @@ main {
       font-weight: 500;
       color: #252830;
       text-align: justify;
+    }
+  }
+
+  .mobile_app {
+    .text_area {
+      padding: 140px 0;
+
+      h2 {
+        color: #ec1a2f;
+
+        span {
+          color: #464646;
+        }
+
+        &::after {
+          background: #ec1a2f;
+        }
+      }
+
+      p {
+        color: #252830;
+      }
+    }
+
+    .image_area {
+      -webkit-animation-name: floating_app;
+      animation-name: floating_app;
+    }
+  }
+
+  .SMS_marketing {
+    .text_area {
+      padding: 140px 0;
+
+      h2 {
+        color: #ec1a2f;
+
+        span {
+          color: #464646;
+        }
+
+        &::after {
+          background: #ec1a2f;
+        }
+      }
+
+      p {
+        color: #252830;
+      }
+    }
+
+    .image_area {
+      -webkit-animation-name: floating_SMS;
+      animation-name: floating_SMS;
     }
   }
 
@@ -1789,13 +1844,44 @@ main {
   }
 }
 
-@-webkit-keyframes floating_video {
+
+@-webkit-keyframes floating_SMS {
   0% {
     margin-top: 20px;
   }
 
   100% {
     margin-top: 0px;
+  }
+}
+
+@keyframes floating_SMS {
+  0% {
+    margin-top: 20px;
+  }
+
+  100% {
+    margin-top: 0px;
+  }
+}
+
+@-webkit-keyframes floating_app {
+  0% {
+    margin-top: 0px;
+  }
+
+  100% {
+    margin-top: 20px;
+  }
+}
+
+@keyframes floating_app {
+  0% {
+    margin-top: 0px;
+  }
+
+  100% {
+    margin-top: 20px;
   }
 }
 

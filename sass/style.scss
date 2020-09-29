@@ -153,6 +153,7 @@ button:focus {
 .title-styel {
   position: relative;
   margin: 0px auto;
+  overflow: hidden;
 
   span {
     display: inline-block;
@@ -442,6 +443,15 @@ main {
       span {
         color: #ec1a2f;
       }
+    }
+
+    h3 {
+      font-size: 32px;
+      text-align: center;
+      color: #e6e9ef;
+      text-transform: uppercase;
+      font-weight: 400;
+      letter-spacing: 5px;
     }
   }
 }
@@ -1058,6 +1068,12 @@ main {
   .client_list {
     img {
       padding: 20px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.2);
+      }
     }
   }
 }
@@ -1770,11 +1786,17 @@ main {
 /*showcase header*/
 @media only screen and (max-width: 485px) {
   #showcase {
+    height: 550px;
+
     .title {
-      padding-top: 25em;
+      padding-top: 8em;
 
       h2 {
-        font-size: 25px;
+        font-size: 40px;
+      }
+
+      h3 {
+        font-size: 20px;
       }
     }
   }
@@ -1782,11 +1804,17 @@ main {
 
 @media only screen and (min-width: 486px) and (max-width: 767px) {
   #showcase {
+    height: 550px;
+
     .title {
-      padding-top: 23em;
+      padding-top: 5em;
 
       h2 {
-        font-size: 36px;
+        font-size: 50px;
+      }
+
+      h3 {
+        font-size: 20px;
       }
     }
   }
@@ -1794,11 +1822,17 @@ main {
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   #showcase {
+    height: 550px;
+
     .title {
-      padding-top: 22em;
+      padding-top: 5em;
 
       h2 {
-        font-size: 53px;
+        font-size: 60px;
+      }
+
+      h3 {
+        font-size: 28px;
       }
     }
   }

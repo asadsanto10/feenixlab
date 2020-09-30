@@ -20,7 +20,6 @@
   }
 
   .loader .square {
-    background-image: url('../img/favicon.png');
     width: 50px;
     height: 50px;
     margin: 0 auto;
@@ -682,6 +681,10 @@ main {
   padding-top: 70px;
   position: relative;
   overflow: hidden;
+  .row{
+    justify-content: center;
+    align-items: center;
+  }
 
   .title {
     padding-top: 20px;

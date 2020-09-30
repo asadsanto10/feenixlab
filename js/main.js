@@ -75,6 +75,17 @@ jQuery(document).ready(function ($) {
 });
 
 $(document).ready(function () {
+    // lagy loader
+    $('.lazy').Lazy({
+        effect: 'fadeIn',
+        scrollDirection: 'vertical',
+        effect: 'slideDown',
+        visibleOnly: true,
+    });
+
+    // pre loader
+    $("#pre-loader").Lazy(1200).fadeOut();
+
     // Header scroll class
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {

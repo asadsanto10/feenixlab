@@ -139,6 +139,35 @@ $(document).ready(function () {
             }
         ]
     });
+    $('#team-slider').slick({
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        dots: true,
+        prevArrow: false,
+        nextArrow: false,
+        speed: 300,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        responsive: [{
+            breakpoint: 1200,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                infinite: true,
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: false,
+            }
+        }
+        ]
+    });
     /*=============silk slider=====================*/
 
     /*=================isotop==================*/

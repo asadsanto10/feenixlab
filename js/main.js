@@ -1,25 +1,19 @@
 // // nav menu scrool and active
 let mainNavLinks = document.querySelectorAll("nav ul li a");
 let mainSections = document.querySelectorAll("main section");
-
 let lastId;
 let cur = [];
 window.addEventListener("scroll", event => {
     let fromTop = window.scrollY;
     mainNavLinks.forEach(link => {
         let section = document.querySelector(link.hash);
-
-        if (
-            section.offsetTop <= fromTop &&
-            section.offsetTop + section.offsetHeight > fromTop
-        ) {
+        if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
             link.classList.add("active");
         } else {
             link.classList.remove("active");
         }
     });
 });
-
 // ---------Responsive-navbar-active-animation-----------
 function test() {
     var tabsNewAnim = $('#navbarSupportedContent');
@@ -51,19 +45,23 @@ function test() {
     });
 }
 $(document).ready(function () {
-    setTimeout(function () { test(); });
+    setTimeout(function () {
+        test();
+    });
 });
 $(window).scroll('resize', function () {
-    setTimeout(function () { test(); }, 600);
+    setTimeout(function () {
+        test();
+    }, 600);
 });
 $(".navbar-toggler").click(function () {
-    setTimeout(function () { test(); });
+    setTimeout(function () {
+        test();
+    });
 });
-
 jQuery(document).ready(function ($) {
     // Initiate the wowjs animation library
     new WOW().init();
-
     // smooth scrool
     $("a[href^='#']").on('click', function (e) {
         e.preventDefault();
@@ -73,19 +71,7 @@ jQuery(document).ready(function ($) {
         }, 600);
     });
 });
-
 $(document).ready(function () {
-    // lagy loader
-    $('.lazy').Lazy({
-        effect: 'fadeIn',
-        scrollDirection: 'vertical',
-        effect: 'slideDown',
-        visibleOnly: true,
-    });
-
-    // pre loader
-    $("#pre-loader").Lazy(1200).fadeOut();
-
     // Header scroll class
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
@@ -94,20 +80,16 @@ $(document).ready(function () {
             $('#header').removeClass('header-scrolled');
         }
     });
-
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
-
         if (scroll >= 200) {
             $("#who .paralax1").addClass("up");
         } else {
             $("#who .paralax1").removeClass("up");
         }
     });
-
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
-
         if (scroll >= 200) {
             $("#who .paralax2").addClass("down");
         } else {
@@ -127,28 +109,25 @@ $(document).ready(function () {
         slidesToShow: 4,
         slidesToScroll: 2,
         responsive: [{
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
             }
-        ]
+        }, {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        }, {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }]
     });
     $('#team-slider').slick({
         infinite: true,
@@ -167,8 +146,7 @@ $(document).ready(function () {
                 slidesToScroll: 2,
                 infinite: true,
             }
-        },
-        {
+        }, {
             breakpoint: 768,
             settings: {
                 slidesToShow: 1,
@@ -176,21 +154,15 @@ $(document).ready(function () {
                 infinite: true,
                 dots: false,
             }
-        }
-        ]
+        }]
     });
     /*=============silk slider=====================*/
-
     /*=================isotop==================*/
-
     $(window).on('load', function () {
         $grid.isotope('layout');
-
     });
     //install
-    var $grid = $('.work_image').isotope({
-
-    });
+    var $grid = $('.work_image').isotope({});
     //grid
     $grid.imagesLoaded().progress(function () {
         $grid.isotope('layout');
@@ -198,17 +170,17 @@ $(document).ready(function () {
     // filter items on button click
     $('.filter-button').on('click', 'ul li', function () {
         var filterValue = $(this).attr('data-filter');
-        $grid.isotope({ filter: filterValue });
+        $grid.isotope({
+            filter: filterValue
+        });
     });
     $('#our_work ul li').click(function () {
         $('li').removeClass("active");
         $(this).addClass('active');
     });
- /*=================isotop==================*/
-
-
-//  contact form validate =============================
-$('#contact_form').validate({
+    /*=================isotop==================*/
+    //  contact form validate =============================
+    $('#contact_form').validate({
         onfocusout: false,
         onkeyup: false,
         rules: {
@@ -218,9 +190,8 @@ $('#contact_form').validate({
                 required: true,
                 email: true
             },
-
         },
-        errorPlacement: function(error, element) {
+        errorPlacement: function (error, element) {
             error.insertAfter(element);
         },
         messages: {
@@ -231,23 +202,17 @@ $('#contact_form').validate({
                 email: "Please, enter a valid email"
             }
         },
-					
-        highlight: function(element) {
-            $(element)
-            .text('').addClass('error')
-        },                    
-					
-        success: function(element) {
-            element
-            .text('').addClass('valid')
+        highlight: function (element) {
+            $(element).text('').addClass('error')
+        },
+        success: function (element) {
+            element.text('').addClass('valid')
         }
     });
-
-
-     $('#contact_form').submit(function() {
+    $('#contact_form').submit(function () {
         // submit the form
-        if($(this).valid()){
-            $('#submit').button('loading'); 
+        if ($(this).valid()) {
+            $('#submit').button('loading');
             var action = $(this).attr('action');
             $.ajax({
                 url: action,
@@ -258,33 +223,28 @@ $('#contact_form').validate({
                     contactephone: $('#contact_phone').val(),
                     contactmessage: $('#contact_message').val()
                 },
-                success: function() {
+                success: function () {
                     $('#submit').button('reset');
-					$('#modalContact').modal('hide');
-					
-					//Use modal popups to display messages
-					$('#modalMessage .modal-title').html('<i class="far fa-check-circle"></i>Well done!<br>Your message has been successfully sent!');
-					$('#modalMessage').modal('show');
+                    $('#modalContact').modal('hide');
+                    //Use modal popups to display messages
+                    $('#modalMessage .modal-title').html('<i class="far fa-check-circle"></i>Well done!<br>Your message has been successfully sent!');
+                    $('#modalMessage').modal('show');
                 },
-                error: function() {
+                error: function () {
                     $('#submit').button('reset');
-					$('#modalContact').modal('hide');
-					
-					//Use modal popups to display messages
-					$('#modalMessage .modal-title').html('<i class="fas fa-exclamation-triangle"></i>Oops!<br>Something went wrong!');
-					$('#modalMessage').modal('show');
+                    $('#modalContact').modal('hide');
+                    //Use modal popups to display messages
+                    $('#modalMessage .modal-title').html('<i class="fas fa-exclamation-triangle"></i>Oops!<br>Something went wrong!');
+                    $('#modalMessage').modal('show');
                 }
             });
         } else {
             $('#submit').button('reset')
         }
-        return false; 
-    });	    	  
-
+        return false;
+    });
 });
-
 // back to top
-
 var scrolltotop = {
     setting: {
         startline: 100,

@@ -115,7 +115,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="title wow pulse" data-wow-duration="2s" uk-parallax="bgy: -200">
-							<h2>DIGITAL MEDIA <span class="wow bounceInUp center" data-wow-delay="0.5s"
+							<h2>DIGITAL MEDIA <span class="wow bounceIn center" data-wow-delay="0.5s"
 									data-wow-duration="2.5s">MARKETING</span></h2>
 							<h3>your ultimate digital solution provider</h3>
 						</div>
@@ -856,11 +856,11 @@
 									<div class="f_widget about-widget pl_70">
 										<h3 class="title">Service</h3>
 										<ul class="list-unstyled f_list">
-											<li><a href="#">Content Markteing</a></li>
-											<li><a href="#">Video Markteing</a></li>
-											<li><a href="#">SEO</a></li>
-											<li><a href="#">Web Development</a></li>
-											<li><a href="#">Graphic Design</a></li>
+											<li><a href="#content-marketing">Content Markteing</a></li>
+											<li><a href="#video">Video Markteing</a></li>
+											<li><a href="#seo">SEO</a></li>
+											<li><a href="#web">Web Development</a></li>
+											<li><a href="#web">Graphic Design</a></li>
 										</ul>
 									</div>
 								</div>
@@ -920,6 +920,19 @@
 			</div>
 		</div>
 		<!-- MODALS END-->
+		<!-- cookie -->
+		<div class="cookie">
+			<div class="container">
+				<p class="cookie__message">We use cookies to provide our services, for analytics and marketing. To find out more about
+					our use of cookies, please
+					see our <a href="#">Privacy Policy</a>. By continuing to browse our website, you agree to our use of cookies.</p>
+				<button class="cookie__accept">Accept cookies</button>
+				<button class="cookie__decline">Decline cookies</button>
+				<a class="cookie__link" href="http://www.allaboutcookies.org/" title="Learn all about cookies and why sites use them"
+					target="_blank">What are cookies?</a>
+			</div>
+		</div>
+		<!-- cookie -->
 	</main>
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -938,5 +951,23 @@
 	<script type="text/javascript"
 		src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
 	<script src="js/main.js"></script>
+	<script>
+	const cookieContainer = $(".cookie");
+	const cookieButton = $(".cookie__accept");
+	const cookieButtonDecline = $(".cookie__decline");
+
+	cookieButton.on("click", () => {
+		cookieContainer.fadeOut('slow');
+		localStorage.setItem("cookieBannerDisplayed", "true");
+	});
+	cookieButtonDecline.on("click", () => {
+		cookieContainer.fadeOut('slow');
+	});
+	setTimeout(() => {
+		if (localStorage.getItem("cookieBannerDisplayed")) {
+			cookieContainer.hide()
+		}
+	});
+	</script>
 </body>
 </html>
